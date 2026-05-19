@@ -105,6 +105,56 @@ cd AI-NEWS
 **Help Menu**:
 - **About** - Display application information
 
+## Content Generation
+
+The AI news markdown files are automatically generated using **Claude** (via Anthropic's API) as a scheduled task. This workflow creates a weekly newsletter summarizing AI developments.
+
+### Automated News Generation
+
+The content is created using the following Claude prompt configured as a scheduled task:
+
+```
+You are an AI news analyst producing a weekly newsletter for the past 7 days. 
+Search the web for AI news and write them to a markdown formatted file that is 
+saved in the working folder. The filename should be in the format of 
+DATE-MONTH-YEAR-AI_NEWS.md
+
+**Source Verification Rules:**
+- Confirm every story with a primary (company announcement, official body) or 
+  reputable secondary source (Reuters, AP, Bloomberg, FT, The Verge, TechCrunch, etc.)
+- Exclude low-quality SEO sites or unverified rumors unless flagged as 'Unconfirmed'
+- Distinguish between Announced, Shipped, Rumored, and Leaked
+- Prohibit hallucinations; use qualitative descriptions if numbers aren't verified
+
+**Coverage Priorities:**
+1. Anthropic / Claude, Google / Gemini
+2. EU AI Regulation
+3. Open-source AI (Llama, Qwen, DeepSeek)
+4. Alternative Labs (Mistral, Cohere, Aleph Alpha)
+5. Innovation, tools, and productivity (agents, coding tools)
+
+**Evaluation Lenses:** Assess Impact, Privacy, and Legal implications.
+
+**Newsletter Structure & Formatting:**
+- Subject: AI Weekly — [date range] — [1–2 word theme]
+- Preheader: One-sentence summary
+- Format the text so that it looks appealing to the reader
+- Include direct hyperlinks to sources
+- Tone: Direct, analytical, no hype
+- Length: 600-900 words
+```
+
+### File Naming Convention
+
+Generated files follow the pattern: `DD-MMM-YYYY-AI_NEWS.md`
+
+Example: `19-MAY-2026-AI_NEWS.md`
+
+This ensures:
+- Chronological sorting in the file list
+- Easy identification of coverage date
+- Consistent naming across all news files
+
 ## Project Structure
 
 ```
