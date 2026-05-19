@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>AI_NEWS</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>x64</Platforms>
+    <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    
+    <!-- MSIX Packaging Properties -->
+    <GenerateAppxPackageOnBuild>True</GenerateAppxPackageOnBuild>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+    <PackageCertificateKeyFile>AI-NEWS_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificatePassword>AI-NEWS2026</PackageCertificatePassword>
+    <AppxBundle>Never</AppxBundle>
+    <AppxPackageDir>AppPackages\</AppxPackageDir>
+    <UapAppxPackageBuildMode>SideloadOnly</UapAppxPackageBuildMode>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <!-- Include theme files in the package -->
+    <Content Include="Themes\*.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <!-- Include logo images in the package -->
+    <Content Include="*.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,59 @@
+<!--
+  Catppuccin reference button.
+  Demonstrates: surface tokens, hover/active states, focus ring,
+  primary/secondary/destructive variants.
+  Assumes assets/catppuccin.css is loaded.
+-->
+
+<style>
+  .ctp-btn {
+    --btn-bg: transparent;
+    --btn-fg: var(--color-text);
+    --btn-border: var(--color-border);
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    font: 500 14px/1 var(--font-ui);
+    color: var(--btn-fg);
+    background: var(--btn-bg);
+    border: 1px solid var(--btn-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background 120ms ease, border-color 120ms ease, transform 80ms ease;
+  }
+  .ctp-btn:hover    { background: var(--color-hover); }
+  .ctp-btn:active   { background: var(--color-active); transform: translateY(1px); }
+  .ctp-btn:disabled {
+    background: var(--ctp-surface2);
+    color: var(--color-text-muted);
+    cursor: not-allowed;
+  }
+
+  .ctp-btn--primary {
+    --btn-bg: var(--color-primary);
+    --btn-fg: var(--ctp-base);
+    --btn-border: var(--color-primary);
+  }
+  .ctp-btn--primary:hover  { filter: brightness(1.08); background: var(--color-primary); }
+  .ctp-btn--primary:active { filter: brightness(0.95); }
+
+  .ctp-btn--secondary {
+    --btn-bg: transparent;
+    --btn-fg: var(--color-secondary);
+    --btn-border: var(--color-secondary);
+  }
+
+  .ctp-btn--destructive {
+    --btn-bg: var(--color-error);
+    --btn-fg: var(--ctp-base);
+    --btn-border: var(--color-error);
+  }
+</style>
+
+<button class="ctp-btn ctp-btn--primary">Save changes</button>
+<button class="ctp-btn ctp-btn--secondary">Cancel</button>
+<button class="ctp-btn">Tertiary</button>
+<button class="ctp-btn ctp-btn--destructive">Delete</button>
+<button class="ctp-btn" disabled>Disabled</button>

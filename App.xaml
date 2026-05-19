@@ -1,0 +1,19 @@
+<Application x:Class="AI_NEWS.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Override system colors globally for MenuItem theming -->
+            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#11111b"/>
+            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#cdd6f4"/>
+            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#181825"/>
+            <SolidColorBrush x:Key="{x:Static SystemColors.MenuBrushKey}" Color="#181825"/>
+            <SolidColorBrush x:Key="{x:Static SystemColors.MenuTextBrushKey}" Color="#cdd6f4"/>
+            
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Catppuccin-Mocha.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
